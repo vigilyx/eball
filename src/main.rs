@@ -8,6 +8,11 @@ use rand::{Rng, rng, rngs::ThreadRng};
 
 fn main() {
  let mut rng: ThreadRng = rng();
+ println!("Enter a question:");
+ let mut question = String::new();
+ std::io::stdin()
+    .read_line(&mut question)
+    .expect("Failed to read line");
     let dice: i32 = {
         let this = &mut rng;
         let range = 1..=6;
